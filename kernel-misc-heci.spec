@@ -5,7 +5,8 @@
 %bcond_without  userspace       # don't build userspace programs
 %bcond_with     verbose         # verbose build (V=1)
 #
-Summary:	Kernel Module for Intel AMT ME Interface
+Summary:	Linux kernel module for Intel AMT ME Interface
+Summary(pl.UTF-8):	Moduł jądra Linuksa dla interfejsu Intel AMT ME
 Name:		kernel%{_alt_kernel}-misc-heci
 Version:	2.1.21.1032
 Release:	1
@@ -22,11 +23,14 @@ Requires(post,postun):	/sbin/depmod
 %requires_releq_kernel
 Requires(postun):	%releq_kernel
 %endif
-ExclusiveArch:	%ix86 x86_64
+ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This package contains a kernel module for Intel AMT ME Interface.
+This package contains Linux kernel module for Intel AMT ME Interface.
+
+%description -l pl.UTF-8
+Ten pakiet zawiera moduł jądra Linuksa do interfejsu Intel AMT ME.
 
 %prep
 %setup -q -n heci-%{version}
