@@ -34,7 +34,7 @@ Ten pakiet zawiera moduł jądra Linuksa do interfejsu Intel AMT ME.
 
 %prep
 %setup -q -n heci-%{version}
-%patch0 -p1
+%patch -P0 -p1
 cat > src/Makefile << EOF
 obj-m += heci.o
 heci-objs := heci_init.o interrupt.o heci_interface.o io_heci.o heci_main.o
